@@ -1,1 +1,0 @@
-Homework about O Big Notation
