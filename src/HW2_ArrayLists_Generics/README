@@ -1,0 +1,158 @@
+🌺 GENERAL DESCRIPTION
+
+The following homework is a Student Management System designed to manage students,
+courses, and enrollments within an academic environment. The program allows users
+to perform common tasks such as adding and removing students, creating courses,
+enrolling students in courses, assigning grades, calculating GPAs, and generating
+reports from a menu of options. The program also includes sample data (at least
+10 students, 5 courses, and multiple enrollments) to test and demonstrate full
+ system functionality.
+
+🌺 BRIEF DESCRIPTION OF EACH CLASS
+
+# PRINCIPAL CLASSES
+
+1. Student.java
+Represents a student with personal and academic information such as
+student ID, first name, last name, email, GPA, major, and academic year.
+
+2. Course.java
+Represents a course with details like course code, course name,
+ credits, instructor, maximum enrollment, and course prerequisites.
+
+3. StudentManager.java
+Manages a collection ofl students in the system using an ArrayList
+ and provides operations such as add, remove, find, filter students
+ by specific majors, filter students by specific university year,
+ filter honor students based on a minimum GPA, average GPA of all
+ students, average GPA of all student from specific, total students and
+ list all students with their relevant information.
+
+4. Enrollment.java
+Represents the relationship between a student and a course, including
+enrollment ID, student ID, course Code, grade and semester information.
+
+5. EnrollmentManager.java
+Manages student enrollments, create enrollments, drop enrollments,
+find enrollments, list students enrollments, check courses capacity,
+assigns grades to students list enrollments by courses, number of
+enrollments, calculates student GPA based on their grade on courses,
+and list all enrollments.
+
+6. CourseManager.java
+Manages a collection of courses using an ArrayList and provides
+operations to add, find, remove, filter courses by instructor,
+available courses to enroll students, list all courses, and total
+number of courses.
+
+7. ReportGenerator.java
+Generates reports such as student summaries, course enrollments,
+major summaries, and honor roll summary.
+
+8. StudentManagementSystemMain.java
+Main class with sample students, courses, prerequisites, and enrollments
+created to test functionality of the student management system. Includes
+a menu with multiples options that user can performance into the management system.
+
+# SECONDARY CLASSES
+
+9. ArrayListOperationsDemo.java
+Demonstrates ArrayList operations like conversion, subList, sorting,
+and searching. Also classes that implement comparators to sort in
+descending order students GPA and Last Name.
+
+10. ArrayListvsArrayDemo.java
+Compares ArrayList and array performance, including add, remove, resize,
+and access time with a report of the differences between both. Also,
+includes a summary explaining from my understanding when to use
+ArrayList or Array.
+
+11. ArrayListUtils.java
+Provides generic utility methods for ArrayLists like find maximum,
+reverse, merge, filter, filter above, displaying lists, and numeric
+operations like sum, average, and numeric operations with use of
+wildcards types. Also includes a main testing functions and operations.
+
+12. GenericList<T>
+A generic list wrapper around ArrayList with basic operations like add,
+remove, get, size, isEmpty, clear, addAll, and contains. Also, includes
+a main testing of all basic operations and using Generics.
+
+13. GenericStack<T>
+A generic stack implemented using ArrayList with functions like
+push, pop, peek, size, isEmpty, and clear operations. Also includes
+a main testing of all stack operations.
+
+14. GenericQueue<T>
+A generic queue implemented using ArrayList with enqueue, dequeue,
+peek, isEmpty, and size operations. Also includes a main testing of
+all of the queue operations.
+
+15. Pair<K, V>
+A generic class that stores two related values, first and second,
+with getters, setters, toString, equals and hashCode. Includes a
+main testing of the functionality using different types of ArrayList
+to show generics.
+
+🌺 HOW TO COMPILE AND RUN THE PROGRAM
+
+To compile and run the program, click and make sure to be inside
+the file “StudentManagementSystemMain.java” and click on the Run
+button. The program will be compiled and it will start showing some
+messages indicating that sample data was created (students, courses,
+enrollments) and the menu of options to user test.
+
+🌺 DESIGN DECISIONS I MADE
+I decided to use the alternative counter base to fix the “hidden problem” on
+ enrollStudent() method inside EnrollmentManeger.java class to create enrollmentIds
+  for students.
+In the options menu, I decided to add additional actions such as "List
+all courses" to get a specific overview of all courses and "List all
+enrollments" to get the StudentId, EnrollmentId generated using the counter base
+and the full name of the enrolled student to make things easier when I'm
+demonstrating the menu functions during the recording.
+I connected EnrollmentManager to CourseManager on EnrollmentManager so each
+class has its own responsibility. At first, my enrollStudent method was not
+working correctly according to the instructions. I realized it was because
+I needed to check if the course exists and if the course was already full
+before enrolling a student. I added a reference to CourseManager inside
+EnrollmentManager to allowed me to validate the course properly before creating
+the enrollment, and after that the method worked as expected.
+I added to the design  check like if something is not found, if
+ArrayList is null, If is empty, and some more possible cases.
+
+
+🌺 CHALLENGES ENCOUNTERED
+
+Trying to figure out the problem in the method EnrollStudent()
+Understand the differences between the types of wildcards because I did research
+ and also asked to chatGPT for examples and more detailed explanations to
+understand each one well.
+On HW 1 I did not use a menu of options, but for this one I did it to do
+a better demonstration and concisely recording. But then, I realize  there’s
+things that do not work for the menu like some modification in the way I
+should display functions, printing messages and other little things I must
+fix to do it right.
+Trying to do some generics methods and fixing errors on the demonstrations
+for Generics.
+
+🌺 WHAT I LEARNED ABOUT ARRAYLIST AND GENERICS
+
+Array is better to use when you know how many elements you need to store.
+ArrayList is better to use when you need flexibility in sizing..
+ArrayList can do operations like add, resize and remove elements easier
+than Array which has this limitations at least you do those operation manually.
+ArrayList just works with wrapper classes and objects
+Generics lists have methods like AddAll to combine two lists of the same type.
+Generics improve type safety because they prevent adding the wrong type of object.
+
+🌺 COMPARISON OF ARRAYLIST VS ARRAY LIST ON MY EXPERIENCE
+ArrayList can add multiple elements because it is dynamic sizing
+(auto-resize while you add elements) and uses useful methods to do it like add().
+Array has size limitation because it is fixed size. This complicates
+adding multiple elements without being aware of the size of the array.
+ArrayList can remove elements from any part of the list without problems
+using remove()
+I can not remove from array an element of the middle because arrays have
+fixed size. Removing an element from the middle could require manually
+shifting all the remaining elements to remove a specific element.
